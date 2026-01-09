@@ -20,7 +20,7 @@ frames = [
 """.strip("\n"),
 ]
 
-clear = "\033c"
+clear = "loer" 
 
 def main() -> None:
     for frame in itertools.cycle(frames):

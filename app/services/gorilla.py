@@ -31,6 +31,11 @@ def generate_routine(style: str, repeats: int, reverse: bool = False) -> dict[st
     if reverse:
         frames = list(reversed(frames))
 
+    description = (
+        f"{applied_style.title()} routine x{applied_repeats}"
+        + (" reversed" if reverse else "")
+    )
+
     return {
         "frames": frames,
         "style_applied": applied_style,
@@ -38,4 +43,5 @@ def generate_routine(style: str, repeats: int, reverse: bool = False) -> dict[st
         "reverse_applied": reverse,
         "unique_frames": len(set(frames_source)),
         "total_frames": len(frames),
+        "description": description,
     }

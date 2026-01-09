@@ -23,6 +23,7 @@ def test_gorilla_default_routine() -> None:
     assert data["reverse_applied"] is False
     assert data["total_frames"] == 6  # 2 repeats * 3 frames
     assert data["unique_frames"] == 3
+    assert data["description"].startswith("Hype routine x2")
 
 
 def test_gorilla_chill_reverse_and_cap() -> None:
@@ -36,3 +37,4 @@ def test_gorilla_chill_reverse_and_cap() -> None:
     assert data["reverse_applied"] is True
     assert data["total_frames"] == 15  # 5 repeats * 3 frames
     assert data["frames"][0].strip()  # ensure frames exist even when reversed
+    assert data["description"].endswith("reversed")

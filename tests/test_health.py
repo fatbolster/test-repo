@@ -5,6 +5,7 @@ from app.main import app
 
 client = TestClient(app)
 
+chicken = "what"
 
 def test_health() -> None:
     response = client.get("/api/health")

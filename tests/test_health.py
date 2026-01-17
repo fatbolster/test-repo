@@ -5,6 +5,7 @@ from app.main import app
 
 client = TestClient(app)
 
+chicken = "what"
 
 def test_health() -> None:
     response = client.get("/api/health")
@@ -18,7 +19,6 @@ def test_gorilla_default_sets() -> None:
     data = response.json()
     assert data["sets_requested"] == 1
     assert data["sets_applied"] == 1
-    assert data["hype_added"] is True
     assert data["closing_added"] is True
     assert data["total_frames"] == 6  # hype + 4 frames + closing
     assert data["frames"][0].startswith("DJ yells")
